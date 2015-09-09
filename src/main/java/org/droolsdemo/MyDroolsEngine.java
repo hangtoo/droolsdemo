@@ -47,9 +47,13 @@ public class MyDroolsEngine {
     public long run(Object message) {
         KieSession kieSession = getSession();
         long start = System.nanoTime();
+
         FactHandle factHandle = kieSession.insert(message);
+
         kieSession.fireAllRules();
+
         kieSession.delete(factHandle);
+
         long end = System.nanoTime();
         return end - start;
     }
