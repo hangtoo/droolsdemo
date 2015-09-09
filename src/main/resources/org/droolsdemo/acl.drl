@@ -1,0 +1,17 @@
+import org.droolsdemo.AclRequest
+
+rule "ACLMikeMiller-Login"
+when
+	token : AclRequest( username == "mike.miller" && resourceId == "login")
+then
+	token.setGranted(true);
+end
+
+/*
+rule "ACLMadMax-Login"
+when
+	token : AclRequest( username == "mad.max" && resourceId == "login")
+then
+	token.setGranted(true);
+end
+*/

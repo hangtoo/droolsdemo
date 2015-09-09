@@ -1,0 +1,8 @@
+import org.droolsdemo.AclRequest
+
+rule "ACL001"
+when
+	token : AclRequest( username == "mike.miller" && resourceId == "login")
+then
+	token.useAnUnknownMethod(true);
+end

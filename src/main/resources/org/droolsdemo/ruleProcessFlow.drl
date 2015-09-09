@@ -1,0 +1,8 @@
+import org.droolsdemo.processflow.ProcessData
+
+rule "canReachGate1"
+when
+	token : ProcessData( isBonusAvailable && !isBusinessCustomer )
+then
+	token.useAnUnknownMethod(true);
+end
