@@ -46,4 +46,20 @@ public class ProcessDataRequest {
         this.canReachGate3 = canReachGate3;
     }
 
+    public boolean isPayloadAvailable() {
+        return input.isPayloadAvailable();
+    }
+
+    public boolean isBusinessCustomer() {
+        return input.isBusinessCustomer();
+    }
+
+    public boolean isBonusAvailable() {
+        return input.isBonusAvailable();
+    }
+
+    public int getGate() {
+        return input.getGate();
+    }
+
 }

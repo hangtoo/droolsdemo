@@ -1,7 +1,6 @@
 package org.droolsdemo.processflow.rules;
 
 import org.droolsdemo.MyDroolsEngine;
-import org.droolsdemo.processflow.ProcessData;
 
 public class ProcessFlowWithRuleEngine {
 
@@ -11,12 +10,14 @@ public class ProcessFlowWithRuleEngine {
         if (ruleEngine == null) {
             ruleEngine = new MyDroolsEngine();
         }
-        ruleEngine.loadRules("");
+        ruleEngine.loadRules("ruleProcessFlow.drl");
         return ruleEngine;
     }
 
-    public boolean canReachGate1(ProcessData input) {
+    public boolean canReachGate1(ProcessDataRequest input) {
+
         getEngine().run(input);
-        return false;
+
+        return input.isCanReachGate1();
     }
 }

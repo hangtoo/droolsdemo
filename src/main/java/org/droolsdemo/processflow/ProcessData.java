@@ -39,4 +39,5 @@ public class ProcessData {
         this.bonusAvailable = bonusAvailable;
     }
 
+
 }

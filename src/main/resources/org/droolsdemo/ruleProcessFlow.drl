@@ -1,8 +1,8 @@
-import org.droolsdemo.processflow.ProcessData
+import org.droolsdemo.processflow.rules.ProcessDataRequest
 
 rule "canReachGate1"
 when
-	token : ProcessData( isBonusAvailable && !isBusinessCustomer )
+	token : ProcessDataRequest( isBonusAvailable() && !isBusinessCustomer() && getGate() >= 1 && getGate() < 5 )
 then
-	token.useAnUnknownMethod(true);
+	token.setCanReachGate1(true);
 end
