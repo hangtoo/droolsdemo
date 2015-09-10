@@ -1,0 +1,8 @@
+import org.droolsdemo.weatherforecast.rules.WeatherDataRequest
+
+rule "isSunnyWeather"
+when
+	token : WeatherDataRequest( getAirPreasure() < 30 && getTemperature() > 20.5 && getWindSpeed() < 15 )
+then
+	token.isSunnyWeather = true;
+end
