@@ -1,4 +1,4 @@
-# Riak Ruby Client Release Notes
+# Drools Demo
 
 ## Setup
 
