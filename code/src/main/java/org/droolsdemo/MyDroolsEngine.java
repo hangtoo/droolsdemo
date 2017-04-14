@@ -31,7 +31,7 @@ public class MyDroolsEngine {
             try {
                 String rule = getRuleContent(filename);
                 Resource ressource = ks.getResources().newByteArrayResource(rule.getBytes("UTF-8"), "UTF-8");
-                ressource.setTargetPath("src/main/resources/" + filename + ".drl");
+                ressource.setTargetPath("src/main/resources/" + filename);// + ".drl"
                 kfs.write(ressource);
             } catch (Exception e) {
                 throw new RuntimeException(e.getMessage(), e);
