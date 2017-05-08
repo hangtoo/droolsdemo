@@ -14,6 +14,7 @@
 		<module>rules</module>
 		<module>code</module>
     <module>springbootdemo</module>
+    <module>jedisdemo</module>
   </modules>
 
 	<properties>
