@@ -7,6 +7,8 @@ import redis.clients.jedis.JedisPoolConfig;
 import redis.clients.jedis.JedisShardInfo;
 import redis.clients.jedis.ShardedJedis;
 import redis.clients.jedis.ShardedJedisPool;
+import redis.clients.util.Hashing;
+import redis.clients.util.Sharded;
 
 public class RedisShardPoolDemo {
     
@@ -28,7 +30,8 @@ public class RedisShardPoolDemo {
         infoB.setPassword("pswd");
         jdsInfoList.add(infoA);
         jdsInfoList.add(infoB);
-        pool =new ShardedJedisPool(config, jdsInfoList);
+        pool =new ShardedJedisPool(config, jdsInfoList, Hashing.MURMUR_HASH,
+        		Sharded.DEFAULT_KEY_TAG_PATTERN);
      }
        
     /**
